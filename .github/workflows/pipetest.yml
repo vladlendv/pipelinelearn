@@ -1,4 +1,7 @@
 name: CI
+env:
+  APPLICATION_NAME: "Flask test"
+  PACKAGE_NAME: "flask-deploy-ver-${{ github.sha }}"
 on:
   push:
     branches:
