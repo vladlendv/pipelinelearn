@@ -7,10 +7,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: print Hello message
+    - name: print test message
       run: echo "Hello Test"
   deploy:
     runs-on: ubuntu-latest
+    needs: [test]
     steps:
-    - name: print Hello message
+    - name: print deploy message
       run: echo print "Hello Deploy"
