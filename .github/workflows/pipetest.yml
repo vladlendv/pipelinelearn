@@ -12,9 +12,17 @@ jobs:
     steps:
     - name: print test message
       run: echo "Hello Test"
+
+    - name: execute few commands
+      run: |
+        echo "first message"
+        echo "second message"
+        echo "application name: ${{ env.APPLICATION_NAME }}"
   deploy:
     runs-on: ubuntu-latest
     needs: [test]
     steps:
     - name: print deploy message
       run: echo print "Hello Deploy"
+    - name: deploytment package
+      run: echo "Deploy package name is ${{ env.PACKAGE_NAME }}"
